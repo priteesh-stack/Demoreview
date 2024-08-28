@@ -238,7 +238,7 @@ const Locate = () => {
               onClick={() => setActiveImage(index)}
             >
               <p>{item.text}</p>
-              <span className="arrow">{index === 0 ? '→' : '→'}</span>
+              <span className="arrow1">{index === 0 ? '→' : '→'}</span>
             </div>
           ))}
         </div>
