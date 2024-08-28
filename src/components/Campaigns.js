@@ -14,6 +14,15 @@ import imageFile4 from '../assets/images/dog.jpeg'
 import videoFile5 from '../assets/images/videoplayback.mp4'
 import imageFile5 from '../assets/images/dog.jpeg'
 
+import tmim from '../assets/images/tomato-new.png'
+import chim from '../assets/images/chilly.png'
+import peim from '../assets/images/Pepper.png'
+import logo from '../assets/images/Logo.png'
+import face from '../assets/images/faceb.png'
+import insta from '../assets/images/insta.jpg'
+import twt from '../assets/images/twitter.png'
+import fresh from '../assets/images/fresh1.png'
+
 
 const Campaigns = () => {
   const videoRef = useRef(null);
@@ -536,35 +545,40 @@ const Campaigns = () => {
   return (
     <>
 
-      <div className='main-vg'>
-        <h1 clsName='main-h1'>Our Campaigns</h1>
+      <div className="bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="text-center">
+            <h1 className="text-10xl font-bold text-gray-900 mb-8">Our Campaigns</h1>
+          </div>
+        </div>
       </div>
 
+      <div className='tm'><img src={tmim}/></div>
 
       <div className="flex bg-gray-100 main-vlg mt-16">
-      <div className="m-auto w-full max-w-6xl bg-white shadow-lg rounded-lg overflow-hidden">
-        <div className="flex flex-col md:flex-row">
-          {/* Media player section */}
-          <div className="w-full md:w-1/2 bg-black relative" ref={containerRef}>
-            <div className="aspect-w-16 aspect-h-9">
-              {slides[currentSlide].type === 'video' ? (
-                <video
-                  ref={videoRef}
-                  className="w-full h-full object-cover"
-                  onClick={togglePlayPause}
-                  onDoubleClick={handleDoubleClick}
-                >
-                  <source src={slides[currentSlide].src} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              ) : (
-                <img
-                  src={slides[currentSlide].src}
-                  alt="Slide"
-                  className="w-full h-full object-cover"
-                  style={{ width: '400px', height: '250px' }}
-                />
-              )}
+        <div className="m-auto w-full max-w-[110rem] bg-white shadow-lg rounded-lg overflow-hidden">
+          <div className="flex flex-col md:flex-row">
+            {/* Media player section */}
+            <div className="w-full md:w-1/2 bg-black relative" ref={containerRef}>
+              <div className="aspect-w-16 aspect-h-9">
+                {slides[currentSlide].type === 'video' ? (
+                  <video
+                    ref={videoRef}
+                    className="w-full h-full object-cover"
+                    onClick={togglePlayPause}
+                    onDoubleClick={handleDoubleClick}
+                  >
+                    <source src={slides[currentSlide].src} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                ) : (
+                  <img
+                    src={slides[currentSlide].src}
+                    alt="Slide"
+                    className="w-full h-full object-cover"
+                    style={{ width: '400px', height: '250px' }}
+                  />
+                )}
               </div>
               {/* Navigation arrows */}
               <button
@@ -632,35 +646,37 @@ const Campaigns = () => {
         </div>
       </div>
 
+      <div className='pe'><img src={peim}/></div>
+
 
       {/* ========================================================== */}
 
 
       <div className="flex bg-gray-100 main-vlg mt-20">
-      <div className="m-auto w-full max-w-6xl bg-white shadow-lg rounded-lg overflow-hidden">
-        <div className="flex flex-col md:flex-row">
-          {/* Media player section */}
-          <div className="w-full md:w-1/2 bg-black relative" ref={containerRef2}>
-            <div className="aspect-w-16 aspect-h-9">
-              {slides2[currentSlide2].type === 'video' ? (
-                <video
-                  ref={videoRef2}
-                  className="w-full h-full object-cover"
-                  onClick={togglePlayPause2}
-                  onDoubleClick={handleDoubleClick2}
-                >
-                  <source src={slides2[currentSlide2].src} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              ) : (
-                <img
-        src={slides2[currentSlide2].src}
-        alt="Slide"
-        className="w-full h-full object-cover"
-        style={{ width: '400px', height: '200px' }}
-      />
-              )}
-            </div>
+        <div className="m-auto w-full max-w-[110rem] bg-white shadow-lg rounded-lg overflow-hidden">
+          <div className="flex flex-col md:flex-row">
+            {/* Media player section */}
+            <div className="w-full md:w-1/2 bg-black relative" ref={containerRef2}>
+              <div className="aspect-w-16 aspect-h-9">
+                {slides2[currentSlide2].type === 'video' ? (
+                  <video
+                    ref={videoRef2}
+                    className="w-full h-full object-cover"
+                    onClick={togglePlayPause2}
+                    onDoubleClick={handleDoubleClick2}
+                  >
+                    <source src={slides2[currentSlide2].src} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                ) : (
+                  <img
+                    src={slides2[currentSlide2].src}
+                    alt="Slide"
+                    className="w-full h-full object-cover"
+                    style={{ width: '400px', height: '200px' }}
+                  />
+                )}
+              </div>
               {/* Navigation arrows */}
               <button
                 className="absolute top-1/2 left-4 transform -translate-y-1/2 text-white"
@@ -731,30 +747,30 @@ const Campaigns = () => {
 
 
       <div className="flex bg-gray-100 main-vlg mt-20">
-      <div className="m-auto w-full max-w-6xl bg-white shadow-lg rounded-lg overflow-hidden">
-        <div className="flex flex-col md:flex-row">
-          {/* Media player section */}
-          <div className="w-full md:w-1/2 bg-black relative" ref={containerRef3}>
-            <div className="aspect-w-16 aspect-h-9">
-              {slides3[currentSlide3].type === 'video' ? (
-                <video
-                  ref={videoRef3}
-                  className="w-full h-full object-cover"
-                  onClick={togglePlayPause3}
-                  onDoubleClick={handleDoubleClick3}
-                >
-                  <source src={slides3[currentSlide3].src} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              ) : (
-                <img
-        src={slides3[currentSlide3].src}
-        alt="Slide"
-        className="w-full h-full object-cover"
-        style={{ width: '400px', height: '200px' }}
-      />
-              )}
-            </div>
+        <div className="m-auto w-full max-w-[110rem] bg-white shadow-lg rounded-lg overflow-hidden">
+          <div className="flex flex-col md:flex-row">
+            {/* Media player section */}
+            <div className="w-full md:w-1/2 bg-black relative" ref={containerRef3}>
+              <div className="aspect-w-16 aspect-h-9">
+                {slides3[currentSlide3].type === 'video' ? (
+                  <video
+                    ref={videoRef3}
+                    className="w-full h-full object-cover"
+                    onClick={togglePlayPause3}
+                    onDoubleClick={handleDoubleClick3}
+                  >
+                    <source src={slides3[currentSlide3].src} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                ) : (
+                  <img
+                    src={slides3[currentSlide3].src}
+                    alt="Slide"
+                    className="w-full h-full object-cover"
+                    style={{ width: '400px', height: '200px' }}
+                  />
+                )}
+              </div>
               {/* Navigation arrows */}
               <button
                 className="absolute top-1/2 left-4 transform -translate-y-1/2 text-white"
@@ -825,30 +841,30 @@ const Campaigns = () => {
 
 
       <div className="flex bg-gray-100 main-vlg mt-20">
-      <div className="m-auto w-full max-w-6xl bg-white shadow-lg rounded-lg overflow-hidden">
-        <div className="flex flex-col md:flex-row">
-          {/* Media player section */}
-          <div className="w-full md:w-1/2 bg-black relative" ref={containerRef4}>
-            <div className="aspect-w-16 aspect-h-9">
-              {slides4[currentSlide4].type === 'video' ? (
-                <video
-                  ref={videoRef4}
-                  className="w-full h-full object-cover"
-                  onClick={togglePlayPause4}
-                  onDoubleClick={handleDoubleClick4}
-                >
-                  <source src={slides4[currentSlide4].src} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              ) : (
-                <img
-        src={slides4[currentSlide4].src}
-        alt="Slide"
-        className="w-full h-full object-cover"
-        style={{ width: '400px', height: '200px' }}
-      />
-              )}
-            </div>
+        <div className="m-auto w-full max-w-[110rem] bg-white shadow-lg rounded-lg overflow-hidden">
+          <div className="flex flex-col md:flex-row">
+            {/* Media player section */}
+            <div className="w-full md:w-1/2 bg-black relative" ref={containerRef4}>
+              <div className="aspect-w-16 aspect-h-9">
+                {slides4[currentSlide4].type === 'video' ? (
+                  <video
+                    ref={videoRef4}
+                    className="w-full h-full object-cover"
+                    onClick={togglePlayPause4}
+                    onDoubleClick={handleDoubleClick4}
+                  >
+                    <source src={slides4[currentSlide4].src} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                ) : (
+                  <img
+                    src={slides4[currentSlide4].src}
+                    alt="Slide"
+                    className="w-full h-full object-cover"
+                    style={{ width: '400px', height: '200px' }}
+                  />
+                )}
+              </div>
               {/* Navigation arrows */}
               <button
                 className="absolute top-1/2 left-4 transform -translate-y-1/2 text-white"
@@ -919,30 +935,30 @@ const Campaigns = () => {
 
 
       <div className="flex bg-gray-100 main-vlg mt-20">
-      <div className="m-auto w-full max-w-6xl bg-white shadow-lg rounded-lg overflow-hidden">
-        <div className="flex flex-col md:flex-row">
-          {/* Media player section */}
-          <div className="w-full md:w-1/2 bg-black relative" ref={containerRef5}>
-            <div className="aspect-w-16 aspect-h-9">
-              {slides5[currentSlide5].type === 'video' ? (
-                <video
-                  ref={videoRef5}
-                  className="w-full h-full object-cover"
-                  onClick={togglePlayPause5}
-                  onDoubleClick={handleDoubleClick5}
-                >
-                  <source src={slides5[currentSlide5].src} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              ) : (
-                <img
-        src={slides5[currentSlide5].src}
-        alt="Slide"
-        className="w-full h-full object-cover"
-        style={{ width: '400px', height: '200px' }}
-      />
-              )}
-            </div>
+        <div className="m-auto w-full max-w-[110rem] bg-white shadow-lg rounded-lg overflow-hidden mb-28">
+          <div className="flex flex-col md:flex-row">
+            {/* Media player section */}
+            <div className="w-full md:w-1/2 bg-black relative" ref={containerRef5}>
+              <div className="aspect-w-16 aspect-h-9">
+                {slides5[currentSlide5].type === 'video' ? (
+                  <video
+                    ref={videoRef5}
+                    className="w-full h-full object-cover"
+                    onClick={togglePlayPause5}
+                    onDoubleClick={handleDoubleClick5}
+                  >
+                    <source src={slides5[currentSlide5].src} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                ) : (
+                  <img
+                    src={slides5[currentSlide5].src}
+                    alt="Slide"
+                    className="w-full h-full object-cover"
+                    style={{ width: '400px', height: '200px' }}
+                  />
+                )}
+              </div>
               {/* Navigation arrows */}
               <button
                 className="absolute top-1/2 left-4 transform -translate-y-1/2 text-white"
@@ -1007,6 +1023,54 @@ const Campaigns = () => {
           </div>
         </div>
       </div>
+
+      <div className='ch'><img src={chim}/></div>
+
+      <footer className="footer">
+      <div className="footer-container">
+        <div className="footer-logo">
+          <img src={logo} alt="The SnaapFood Company" />
+        </div>
+        
+        <div className="footer-links">
+          <h3>QUICK LINKS</h3>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/campaigns">Campaigns</a></li>
+            <li><a href="/locate">Locate Us</a></li>
+            <li><a href="/order">Order Now</a></li>
+          </ul>
+        </div>
+        
+        <div className="footer-contact">
+          <h3>CONTACT US</h3>
+          <p>support@swiggy.in</p>
+          <p>Terms and Conditions</p>
+        </div>
+        
+        <div className="footer-subscribe">
+          <h3>SUBSCRIBE</h3>
+          <p>Receive notifications of new offers by email</p>
+          <input type="text" placeholder="ENTER NAME" />
+          <input type="email" placeholder="ENTER EMAIL ID" />
+          <a href='#' className='btn'>ORDER NOE</a>
+        </div>
+      </div>
+      
+      <div className="footer-social">
+        <p>FOLLOW US</p>
+        <div className="social-icons">
+          <a href="#" className="facebook-icon"><img src={face}/></a>
+          <a href="#" className="instagram-icon"><img src={insta}/></a>
+          <a href="#" className="twitter-icon"><img src={twt}/></a>
+        </div>
+      </div>
+    </footer>
+    <div className='copy-right'>
+      <div className='copy-img'><img src={fresh}/></div>
+      <div className='copy-txt'><h4>© ALL RIGHTS RESERVED</h4></div>
+    </div>
 
     </>
   )
