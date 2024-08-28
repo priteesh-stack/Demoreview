@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { useNavigate,} from 'react-router-dom';
+import { useNavigate,Link} from 'react-router-dom';
 import Logo from '../assets/images/Logo.png';
 
 const Navbar = () => {
@@ -19,7 +19,7 @@ const Navbar = () => {
         <a onClick={() => navigate('/')}>HOME</a>
         <a onClick={() => navigate('/about')}>ABOUT US</a>
         <a onClick={() => navigate('/campaigns')}>CAMPAIGNS</a>
-        <a href="/locate#location-pages">LOCATE US</a>
+        <Link to="/locate#location-pages">LOCATE US</Link>
         <a onClick={() => navigate('/order')}>ORDER NOW</a>
       </nav>
       <div className='icons'>
