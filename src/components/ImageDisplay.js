@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import pepper from '../assets/images/Pepper.png'
 import FancyCarousel from "react-fancy-circular-carousel";
 import 'react-fancy-circular-carousel/FancyCarousel.css';
-
+import './FancyCarousel.css';
 import image1 from '../assets/images/im1.jpg';
 import image2 from '../assets/images/im2.jpeg';
 import image3 from '../assets/images/im3.png';
