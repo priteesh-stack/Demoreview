@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import "./assets/css/style.css";
-import Navbar from './componnets/Navbar';
-import Abouts from './componnets/Abouts';
-import Campaigns from './componnets/Campaigns';
-import Locate from './componnets/Locate';
-import Order from './componnets/Order';
-import MainContent from './componnets/MainContent';
+import Navbar from './components/Navbar';
+import Abouts from './components/Abouts';
+import Campaigns from './components/Campaigns';
+import Locate from './components/Locate';
+import Order from './components/Order';
+import MainContent from './components/MainContent';
 
 
 const App = () => {
