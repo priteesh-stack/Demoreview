@@ -10,6 +10,7 @@ import logo from '../assets/images/Logo.png'
 import face from '../assets/images/faceb.png'
 import insta from '../assets/images/insta.jpg'
 import twt from '../assets/images/twitter.png'
+import fresh from '../assets/images/fresh1.png'
 
 const Locate = () => {
 
@@ -278,7 +279,6 @@ const Locate = () => {
           <input type="text" placeholder="ENTER NAME" />
           <input type="email" placeholder="ENTER EMAIL ID" />
           <a href='#' className='btn'>ORDER NOE</a>
-          <div className="footer-rights">© ALL RIGHTS RESERVED</div>
         </div>
       </div>
       
@@ -291,6 +291,10 @@ const Locate = () => {
         </div>
       </div>
     </footer>
+    <div className='copy-right'>
+      <div className='copy-img'><img src={fresh}/></div>
+      <div className='copy-txt'><h4>© ALL RIGHTS RESERVED</h4></div>
+    </div>
 
     </>
   )

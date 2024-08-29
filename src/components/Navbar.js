@@ -20,7 +20,8 @@ const Navbar = () => {
         <a onClick={() => navigate('/about')}>ABOUT US</a>
         <a onClick={() => navigate('/campaigns')}>CAMPAIGNS</a>
         <Link to="/locate#location-pages">LOCATE US</Link>
-        <a onClick={() => navigate('/order')}>ORDER NOW</a>
+        <a href="https://www.swiggy.com" target="_blank" rel="noopener noreferrer">ORDER NOW</a>
+
       </nav>
       <div className='icons'>
         <div className="fas fa-bars" id="menu-btn" onClick={navbarHandler}></div>
