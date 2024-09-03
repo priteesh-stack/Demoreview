@@ -5,7 +5,7 @@ import img1 from '../assets/images/Bowl-company-packages.png'
 import img2 from '../assets/images/Bowl-company-boxes.png'
 import img3 from '../assets/images/quality-packaging.png'
 import pepper from '../assets/images/Pepper.png'
-import {  useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import logo from '../assets/images/Logo.png'
 import face from '../assets/images/faceb.png'
 import insta from '../assets/images/insta.jpg'
@@ -20,28 +20,19 @@ const Locate = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('/api/subscribe', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ name, email }),
-      });
-      
-      if (response.ok) {
-        alert('Subscription successful!');
-        setName('');
-        setEmail('');
-      } else {
-        alert('Subscription failed. Please try again.');
-      }
+      const response = await axios.post('http://localhost:3001/api/subscribe', { name, email });
+      console.log('Server response:', response.data);
+      alert('Subscription successful!');
+      setName('');
+      setEmail('');
     } catch (error) {
-      console.error('Error:', error);
-      alert('An error occurred. Please try again later.');
+      console.error('Subscription failed:', error);
+      alert('Subscription failed. Please try again.');
     }
   };
 
-  
+
+
 
   const imgRef = useRef(null);
 
@@ -133,12 +124,12 @@ const Locate = () => {
   ];
 
 
-    // const navigate = useNavigate();
-  
-    // const handleClick = () => {
-    //   // Navigate to the Locate component and scroll to the specific section
-    //   navigate('/locate#location-pages');
-    // };
+  // const navigate = useNavigate();
+
+  // const handleClick = () => {
+  //   // Navigate to the Locate component and scroll to the specific section
+  //   navigate('/locate#location-pages');
+  // };
 
   return (
     <>
@@ -223,121 +214,121 @@ const Locate = () => {
 
 
       <div className="kitchen-practices">
-      <h1>OUR KITCHEN PRACTICES</h1>
-      <p className="subtitle1">
-        Our kitchens are where all the magic happens. That's why we do our best to keep
-        them neat, clean, and safe for cooking.
-      </p>
-      <div className="practices-grid">
-        <div className="practice-item">
-          <div className="icon raw-materials"></div>
-          <p>Raw materials are thoroughly washed and sanitized before use</p>
-        </div>
-        <div className="practice-item">
-          <div className="icon surfaces"></div>
-          <p>Surfaces in contact with food are sanitized as per a 'Clean As You Go' approach</p>
-        </div>
-        <div className="practice-item">
-          <div className="icon quality-assurance"></div>
-          <p>Supplier Quality Assurance program is in place and follows the 'inspect → comply → procure' approach</p>
-        </div>
-        <div className="practice-item">
-          <div className="icon personal-hygiene"></div>
-          <p>Personal hygiene is strictly maintained through masks, hairnets, and gloves</p>
-        </div>
-        
-        <div className="practice-item">
-          <div className="icon vaccination"></div>
-          <p>All kitchen employees are vaccinated</p>
+        <h1>OUR KITCHEN PRACTICES</h1>
+        <p className="subtitle1">
+          Our kitchens are where all the magic happens. That's why we do our best to keep
+          them neat, clean, and safe for cooking.
+        </p>
+        <div className="practices-grid">
+          <div className="practice-item">
+            <div className="icon raw-materials"></div>
+            <p>Raw materials are thoroughly washed and sanitized before use</p>
+          </div>
+          <div className="practice-item">
+            <div className="icon surfaces"></div>
+            <p>Surfaces in contact with food are sanitized as per a 'Clean As You Go' approach</p>
+          </div>
+          <div className="practice-item">
+            <div className="icon quality-assurance"></div>
+            <p>Supplier Quality Assurance program is in place and follows the 'inspect → comply → procure' approach</p>
+          </div>
+          <div className="practice-item">
+            <div className="icon personal-hygiene"></div>
+            <p>Personal hygiene is strictly maintained through masks, hairnets, and gloves</p>
+          </div>
+
+          <div className="practice-item">
+            <div className="icon vaccination"></div>
+            <p>All kitchen employees are vaccinated</p>
+          </div>
         </div>
       </div>
-    </div>
 
 
-    <div className="good-packaging">
-      <h1>GOOD THINGS COME IN GOOD <br/> PACKAGING</h1>
-      <p className="subtitle">
-        We strive to maintain quality packaging that is both functional and sustainable.
-      </p>
-      <div className="content1">
-        <div className="text-section">
-          {packagingInfo.map((item, index) => (
-            <div 
-              key={index} 
-              className={`info-item ${activeImage === index ? 'active' : ''}`}
-              onClick={() => setActiveImage(index)}
-            >
-              <p>{item.text}</p>
-              <span className="arrow1">{index === 0 ? '→' : '→'}</span>
-            </div>
-          ))}
-        </div>
-        <div className="image-section">
-          <img src={packagingInfo[activeImage].image} alt="Packaging" />
+      <div className="good-packaging">
+        <h1>GOOD THINGS COME IN GOOD <br /> PACKAGING</h1>
+        <p className="subtitle">
+          We strive to maintain quality packaging that is both functional and sustainable.
+        </p>
+        <div className="content1">
+          <div className="text-section">
+            {packagingInfo.map((item, index) => (
+              <div
+                key={index}
+                className={`info-item ${activeImage === index ? 'active' : ''}`}
+                onClick={() => setActiveImage(index)}
+              >
+                <p>{item.text}</p>
+                <span className="arrow1">{index === 0 ? '→' : '→'}</span>
+              </div>
+            ))}
+          </div>
+          <div className="image-section">
+            <img src={packagingInfo[activeImage].image} alt="Packaging" />
+          </div>
         </div>
       </div>
-    </div>
 
 
-    <footer className="footer">
-      <div className="footer-container">
-        <div className="footer-logo">
-          <img src={logo} alt="The SnaapFood Company" />
+      <footer className="footer">
+        <div className="footer-container">
+          <div className="footer-logo">
+            <img src={logo} alt="The SnaapFood Company" />
+          </div>
+
+          <div className="footer-links">
+            <h3>QUICK LINKS</h3>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/about">About Us</a></li>
+              <li><a href="/campaigns">Campaigns</a></li>
+              <li><a href="/locate">Locate Us</a></li>
+              <li><a href="/order">Order Now</a></li>
+            </ul>
+          </div>
+
+          <div className="footer-contact">
+            <h3>CONTACT US</h3>
+            <p>support@swiggy.in</p>
+            <p>Terms and Conditions</p>
+          </div>
+
+          <div className="footer-subscribe">
+            <h3>SUBSCRIBE</h3>
+            <p>Receive notifications of new offers by email</p>
+            <form onSubmit={handleSubmit}>
+              <input
+                type="text"
+                placeholder="ENTER NAME"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
+              <input
+                type="email"
+                placeholder="ENTER EMAIL ID"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              <button type="submit" className='btn'>SUBMIT</button>
+            </form>
+          </div>
         </div>
-        
-        <div className="footer-links">
-          <h3>QUICK LINKS</h3>
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About Us</a></li>
-            <li><a href="/campaigns">Campaigns</a></li>
-            <li><a href="/locate">Locate Us</a></li>
-            <li><a href="/order">Order Now</a></li>
-          </ul>
+
+        <div className="footer-social">
+          <p>FOLLOW US</p>
+          <div className="social-icons">
+            <a href="#" className="facebook-icon"><img src={face} /></a>
+            <a href="#" className="instagram-icon"><img src={insta} /></a>
+            <a href="#" className="twitter-icon"><img src={twt} /></a>
+          </div>
         </div>
-        
-        <div className="footer-contact">
-          <h3>CONTACT US</h3>
-          <p>support@swiggy.in</p>
-          <p>Terms and Conditions</p>
-        </div>
-        
-        <div className="footer-subscribe">
-          <h3>SUBSCRIBE</h3>
-          <p>Receive notifications of new offers by email</p>
-          <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            placeholder="ENTER NAME"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
-          <input
-            type="email"
-            placeholder="ENTER EMAIL ID"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <button type="submit" className='btn'>SUBMIT</button>
-        </form>
-        </div>
+      </footer>
+      <div className='copy-right'>
+        <div className='copy-img'><img src={fresh} /></div>
+        <div className='copy-txt'><h4>© ALL RIGHTS RESERVED</h4></div>
       </div>
-      
-      <div className="footer-social">
-        <p>FOLLOW US</p>
-        <div className="social-icons">
-          <a href="#" className="facebook-icon"><img src={face}/></a>
-          <a href="#" className="instagram-icon"><img src={insta}/></a>
-          <a href="#" className="twitter-icon"><img src={twt}/></a>
-        </div>
-      </div>
-    </footer>
-    <div className='copy-right'>
-      <div className='copy-img'><img src={fresh}/></div>
-      <div className='copy-txt'><h4>© ALL RIGHTS RESERVED</h4></div>
-    </div>
 
     </>
   )

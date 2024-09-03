@@ -27,31 +27,22 @@ import fresh from '../assets/images/fresh1.png'
 const Campaigns = () => {
 
   const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
+    const [email, setEmail] = useState('');
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await fetch('/api/subscribe', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ name, email }),
-      });
-      
-      if (response.ok) {
-        alert('Subscription successful!');
-        setName('');
-        setEmail('');
-      } else {
-        alert('Subscription failed. Please try again.');
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      alert('An error occurred. Please try again later.');
-    }
-  };
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await axios.post('http://localhost:3001/api/subscribe', { name, email });
+            console.log('Server response:', response.data);
+            alert('Subscription successful!');
+            setName('');
+            setEmail('');
+        } catch (error) {
+            console.error('Subscription failed:', error);
+            alert('Subscription failed. Please try again.');
+        }
+    };
+
 
 
   const videoRef = useRef(null);
@@ -1082,22 +1073,22 @@ const Campaigns = () => {
           <h3>SUBSCRIBE</h3>
           <p>Receive notifications of new offers by email</p>
           <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            placeholder="ENTER NAME"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
-          <input
-            type="email"
-            placeholder="ENTER EMAIL ID"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <button type="submit" className='btn'>SUBMIT</button>
-        </form>
+                            <input
+                                type="text"
+                                placeholder="ENTER NAME"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                                required
+                            />
+                            <input
+                                type="email"
+                                placeholder="ENTER EMAIL ID"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                required
+                            />
+                            <button type="submit" className='btn'>SUBMIT</button>
+                        </form>
         </div>
       </div>
       
