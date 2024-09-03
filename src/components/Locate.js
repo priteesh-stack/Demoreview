@@ -11,6 +11,7 @@ import face from '../assets/images/faceb.png'
 import insta from '../assets/images/insta.jpg'
 import twt from '../assets/images/twitter.png'
 import fresh from '../assets/images/fresh1.png'
+import axios from 'axios';
 
 const Locate = () => {
 
