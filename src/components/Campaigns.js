@@ -25,6 +25,35 @@ import fresh from '../assets/images/fresh1.png'
 
 
 const Campaigns = () => {
+
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email }),
+      });
+      
+      if (response.ok) {
+        alert('Subscription successful!');
+        setName('');
+        setEmail('');
+      } else {
+        alert('Subscription failed. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('An error occurred. Please try again later.');
+    }
+  };
+
+
   const videoRef = useRef(null);
   const videoRef2 = useRef(null);
   const videoRef3 = useRef(null);
@@ -1052,9 +1081,23 @@ const Campaigns = () => {
         <div className="footer-subscribe">
           <h3>SUBSCRIBE</h3>
           <p>Receive notifications of new offers by email</p>
-          <input type="text" placeholder="ENTER NAME" />
-          <input type="email" placeholder="ENTER EMAIL ID" />
-          <a href='#' className='btn'>ORDER NOE</a>
+          <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="ENTER NAME"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
+          <input
+            type="email"
+            placeholder="ENTER EMAIL ID"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <button type="submit" className='btn'>SUBMIT</button>
+        </form>
         </div>
       </div>
       

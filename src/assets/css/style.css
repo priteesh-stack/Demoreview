@@ -931,7 +931,13 @@ body {
   border: 1px solid #ccc;
   border-radius: 5px;
   margin-top: 10px;
+  
 }
+
+.footer-subscribe input[type="email"] {
+  text-transform: none;
+}
+
 
 /* .footer-subscribe button {
   background-color: black;
@@ -1825,9 +1831,9 @@ h1 {
     margin-top: 20px;
   }
 
-  .location-name{
+  /* .location-name{
     
-  }
+  } */
 }
 
 
