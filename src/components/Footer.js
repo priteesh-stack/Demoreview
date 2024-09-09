@@ -15,8 +15,9 @@ const Footer = () => {
         e.preventDefault();
         try {
             const url = process.env.NODE_ENV === 'production'
-                ? '/.netlify/functions/subscribe.js'
+                ? '/.netlify/functions/subscribe'
                 : 'http://localhost:3001/api/subscribe';
+                
                 const response = await axios.post(url, { name, email });
                 console.log('Server response:', response.data);
                 alert('Subscription successful!');
