@@ -14,16 +14,19 @@ const Footer = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:3001/api/subscribe', { name, email });
-            console.log('Server response:', response.data);
-            alert('Subscription successful!');
-            setName('');
-            setEmail('');
-        } catch (error) {
-            console.error('Subscription failed:', error);
-            alert('Subscription failed. Please try again.');
-        }
-    };
+            const url = process.env.NODE_ENV === 'production'
+                ? '/.netlify/functions/subscribe.js'
+                : 'http://localhost:3001/api/subscribe';
+                const response = await axios.post(url, { name, email });
+                console.log('Server response:', response.data);
+                alert('Subscription successful!');
+                setName('');
+                setEmail('');
+            } catch (error) {
+                console.error('Subscription failed:', error);
+                alert('Subscription failed. Please try again.');
+            }
+        };
 
 
     return (

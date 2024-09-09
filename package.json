@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "axios": "^1.7.5",
+    "axios": "^1.7.7",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "cra-template": "1.2.0",
@@ -31,7 +31,8 @@
     "dev:server": "nodemon server.js",
     "dev:client": "set PORT=3000 && react-scripts start",
     "dev:server-win": "set PORT=3001 && nodemon server.js",
-    "dev": "concurrently \"npm run dev:client\" \"npm run dev:server-win\""
+    "dev": "concurrently \"npm run dev:client\" \"npm run dev:server-win\"",
+    "netlify-dev": "netlify dev"
   },
   "eslintConfig": {
     "extends": [
